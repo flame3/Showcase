@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CameraVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CameraVC" customModule="DevChat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93H-Iz-13M" userLabel="PreviewView" customClass="AAPLPreviewView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76E-Hx-deL">
+                                <rect key="frame" x="155" y="594" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="MCM-9t-lq4"/>
+                                    <constraint firstAttribute="height" constant="65" id="xj5-VW-x0e"/>
+                                </constraints>
+                                <state key="normal" image="createsnap_btn"/>
+                                <connections>
+                                    <action selector="recordBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GUk-fd-oiV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="to1-l0-FFv">
+                                <rect key="frame" x="282" y="28" width="69" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="4rR-G7-xC1"/>
+                                    <constraint firstAttribute="height" constant="50" id="v9s-fA-kda"/>
+                                </constraints>
+                                <state key="normal" image="camera_icon_snap"/>
+                                <connections>
+                                    <action selector="changeCameraBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YlP-4z-ixR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="to1-l0-FFv" secondAttribute="trailing" constant="8" id="1yP-Hp-Wg2"/>
+                            <constraint firstItem="to1-l0-FFv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="2pt-Vc-sxm"/>
+                            <constraint firstItem="76E-Hx-deL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HoQ-K2-XCA"/>
+                            <constraint firstItem="93H-Iz-13M" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KBv-DA-UTK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="93H-Iz-13M" secondAttribute="bottom" id="csx-g0-IbH"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="76E-Hx-deL" secondAttribute="bottom" constant="8" id="nJ2-Oe-rJt"/>
+                            <constraint firstItem="93H-Iz-13M" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sIo-He-4Eh"/>
+                            <constraint firstAttribute="trailing" secondItem="93H-Iz-13M" secondAttribute="trailing" id="xyI-wh-VQi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cameraBtn" destination="to1-l0-FFv" id="JKb-e6-mdt"/>
+                        <outlet property="previewView" destination="93H-Iz-13M" id="gao-SC-38y"/>
+                        <outlet property="recordBtn" destination="76E-Hx-deL" id="f5x-IY-M4G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera_icon_snap" width="29" height="24"/>
+        <image name="createsnap_btn" width="30" height="30"/>
+    </resources>
+</document>
